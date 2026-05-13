@@ -164,6 +164,8 @@ function onSubmit() {
 .h2 {
   margin: 0 0 0.75rem;
   font-size: 1.35rem;
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .muted {
@@ -204,7 +206,7 @@ function onSubmit() {
   background: var(--color-surface);
   border-radius: var(--radius);
   padding: clamp(1.25rem, 4vw, 2rem);
-  border: 1px solid rgba(30, 58, 95, 0.08);
+  border: 1px solid rgba(28, 25, 23, 0.1);
   box-shadow: var(--shadow-md);
 }
 
@@ -229,7 +231,7 @@ function onSubmit() {
   padding: 0.75rem 0.85rem;
   min-height: 48px;
   border-radius: 8px;
-  border: 1px solid rgba(30, 58, 95, 0.2);
+  border: 1px solid rgba(28, 25, 23, 0.18);
   background: #fff;
   color: var(--color-ink);
   width: 100%;
@@ -241,9 +243,9 @@ function onSubmit() {
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  outline: 2px solid var(--color-deep);
+  outline: 2px solid var(--color-accent);
   outline-offset: 1px;
-  border-color: var(--color-deep);
+  border-color: var(--color-accent-dark);
 }
 
 .field textarea {
@@ -261,20 +263,25 @@ function onSubmit() {
   margin-top: 0.25rem;
   align-self: flex-start;
   font: inherit;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.92rem;
+  padding: 0.9rem 1.35rem;
   min-height: 52px;
-  border-radius: 10px;
-  border: none;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-accent);
   cursor: pointer;
-  background: var(--color-deep);
+  background: var(--color-accent);
   color: #fff;
   -webkit-tap-highlight-color: transparent;
 }
 
 .submit:hover {
-  background: var(--color-deep-hover);
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
 }
 
 @media (max-width: 599px) {
@@ -293,8 +300,9 @@ function onSubmit() {
 .note {
   margin: 0 0 1rem;
   padding: 0.85rem 1rem;
-  background: rgba(201, 162, 39, 0.15);
-  border-radius: 8px;
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-accent);
   font-size: 0.92rem;
   line-height: 1.55;
   color: var(--color-ink);

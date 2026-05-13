@@ -38,8 +38,8 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .footer {
-  background: var(--color-deep);
-  color: rgba(255, 255, 255, 0.88);
+  background: var(--color-footer);
+  color: rgba(255, 255, 255, 0.9);
   margin-top: auto;
 }
 
@@ -68,9 +68,11 @@ import { RouterLink } from 'vue-router'
 .logo {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin: 0 0 0.5rem;
   color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .tag {
@@ -82,11 +84,12 @@ import { RouterLink } from 'vue-router'
 }
 
 .heading {
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-accent-soft);
   margin: 0 0 0.85rem;
 }
 

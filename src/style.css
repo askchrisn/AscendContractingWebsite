@@ -1,18 +1,31 @@
 :root {
-  --color-bg: #f6f4ef;
-  --color-surface: #ffffff;
-  --color-ink: #1a2332;
-  --color-muted: #5c6575;
-  --color-accent: #c9a227;
-  --color-accent-dark: #a6851c;
-  --color-deep: #1e3a5f;
-  --color-deep-hover: #2a4d7a;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --shadow-sm: 0 1px 2px rgba(26, 35, 50, 0.06);
-  --shadow-md: 0 8px 24px rgba(26, 35, 50, 0.08);
-  --radius: 12px;
-  --header-h: 72px;
+  /* Warm paper / job-site neutral — not cool gray or bank blue */
+  --color-bg: #f3efe6;
+  --color-bg-elevated: #e8e0d2;
+  --color-surface: #fffdf8;
+  --color-ink: #1c1917;
+  --color-muted: #57534e;
+  /* Signal / CTA — forest, reads trades & trustworthy (not safety orange) */
+  --color-accent: #2d6a4f;
+  --color-accent-soft: #d8f3dc;
+  --color-accent-dark: #1b4332;
+  /* Links track with accent family */
+  --color-link: #1b4332;
+  --color-link-hover: #2d6a4f;
+  /* Footer & dark sections */
+  --color-footer: #1c1917;
+  --color-footer-elevated: #292524;
+  /* Legacy names mapped for minimal churn in components */
+  --color-deep: var(--color-link);
+  --color-deep-hover: var(--color-link-hover);
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  --font-display: 'Oswald', system-ui, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.06);
+  --shadow-md: 0 12px 40px rgba(28, 25, 23, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(45, 106, 79, 0.28);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --header-h: 64px;
 }
 
 *,
@@ -31,7 +44,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--color-ink);
   background: var(--color-bg);
@@ -48,13 +61,13 @@ body {
 }
 
 a {
-  color: var(--color-deep);
+  color: var(--color-link);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--color-deep-hover);
+  color: var(--color-link-hover);
 }
 
 img {
@@ -68,6 +81,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }

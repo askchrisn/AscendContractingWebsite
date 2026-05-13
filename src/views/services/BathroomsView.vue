@@ -27,6 +27,7 @@ const bullets = [
 <template>
   <div>
     <PageHero
+      bg-image="/images/portfolio/portfolio-bath-primary-spa.png"
       eyebrow="Bathrooms"
       title="Bathrooms that feel good today and stay solid tomorrow."
       subtitle="Moisture management, thoughtful layout, and finishes you will not fight with every Saturday—we build baths that work for busy mornings and slow evenings alike."
@@ -71,8 +72,10 @@ const bullets = [
 }
 
 .prose h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 
 .prose p {
@@ -91,7 +94,11 @@ const bullets = [
 
 .cta {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
   margin-top: 0.5rem;
 }
 </style>

@@ -26,74 +26,119 @@ const portfolioImages: readonly PortfolioImage[] = [
     alt: 'Modern bathroom with walk-in shower, floating vanity, and contrasting tile details.',
   },
 ] as const
+
+const serviceShowcase = [
+  {
+    title: 'Roofs',
+    path: '/services/roofs',
+    blurb: 'Storm-ready installs, honest inspections, and clean job sites when we are on your roof.',
+    image: '/images/portfolio/roof-aerial-architectural-shingles.png',
+  },
+  {
+    title: 'Kitchens',
+    path: '/services/kitchen',
+    blurb: 'Layouts, cabinets, and finishes built around how your family actually cooks and gathers.',
+    image: '/images/portfolio/portfolio-kitchen-shaker-island.png',
+  },
+  {
+    title: 'Bathrooms',
+    path: '/services/bathrooms',
+    blurb: 'Waterproofing done right, fixtures you will not fight with, tile that feels intentional.',
+    image: '/images/portfolio/portfolio-bath-primary-spa.png',
+  },
+] as const
 </script>
 
 <template>
   <div>
     <PageHero
-      eyebrow="Local · Licensed · Insured"
-      title="Build upward with a crew you can trust."
-      subtitle="Ascend Contracting handles roofing and interior remodels with clear estimates, respectful crews, and workmanship that holds up to real life."
+      size="tall"
+      bg-image="/images/portfolio/roof-aerial-architectural-shingles.png"
+      eyebrow="Local crew · Licensed & insured"
+      title="Roofing and remodels built to earn your next referral."
+      subtitle="We show up on time, keep dust under control, and put the messy details on paper before we swing a hammer—so you always know what you are getting."
     >
       <div class="hero-actions">
-        <RouterLink to="/contact" class="btn btn-primary">Request a free quote</RouterLink>
-        <RouterLink to="/services" class="btn btn-ghost">See our services</RouterLink>
+        <RouterLink to="/contact" class="btn btn-primary">Get a free quote</RouterLink>
+        <RouterLink to="/services" class="btn btn-ghost">Browse services</RouterLink>
       </div>
+      <ul class="trust-strip" aria-label="Highlights">
+        <li>Written scopes</li>
+        <li>Realistic schedules</li>
+        <li>Magnet sweep on roofs</li>
+      </ul>
     </PageHero>
 
     <section class="section">
       <div class="wrap split">
-        <div>
-          <h2 class="h2">Who we are</h2>
+        <div class="story-copy">
+          <p class="kicker">Who we are</p>
+          <h2 class="h2">Contractors who still answer the phone.</h2>
           <p class="lead">
-            We are a neighborhood-focused contracting team. Whether you need a roof that sheds
-            storms or a kitchen that fits how your family actually cooks, we plan the work
-            carefully, communicate often, and leave your property tidy.
+            We are a neighborhood-focused crew. Whether you need a roof that sheds weather or a
+            kitchen that fits how your family lives, we plan carefully, communicate often, and
+            leave your property ready for you to enjoy—not a punch list nightmare.
           </p>
           <ul class="checks">
-            <li>Written scopes and realistic schedules</li>
-            <li>Respect for your home and your time</li>
-            <li>Quality materials matched to your budget</li>
+            <li>One point of contact from walkthrough to punch list</li>
+            <li>Materials matched to your budget, not upsold for sport</li>
+            <li>Tradespeople who respect your home and your schedule</li>
           </ul>
         </div>
-        <div class="card card-stat">
-          <p class="stat-label">On your side</p>
-          <p class="stat">
-            From first walkthrough to final punch list, you get a single point of contact and
-            tradespeople who show up when we say we will.
-          </p>
-        </div>
+        <figure class="story-photo">
+          <img
+            src="/images/portfolio/portfolio-kitchen-bright-glass.png"
+            alt="Remodeled kitchen with bright cabinets, quality lighting, and durable surfaces."
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="1120"
+          />
+          <figcaption class="photo-cap">Kitchen & bath remodels</figcaption>
+        </figure>
       </div>
+
+      <blockquote class="callout wrap">
+        <p>
+          From the first walkthrough to the final walkthrough, you get straight answers and
+          tradespeople who show up when we say we will.
+        </p>
+      </blockquote>
     </section>
 
     <PortfolioGrid
-      heading="Work we are proud to stand behind"
+      heading="Proof on the roof—and in the rooms below it"
       :images="portfolioImages"
       footnote="The aerial roof photo is from a recent replacement. Interior images are representative of finishes and layouts we often build—ask us for photos from jobs near you."
     />
 
-    <section class="section section-alt">
+    <section class="section section-showcase">
       <div class="wrap">
-        <h2 class="h2 center">What we do best</h2>
+        <p class="kicker center">What we hang our hat on</p>
+        <h2 class="h2 center">Three trades. One standard for workmanship.</h2>
         <p class="intro center">
-          Three core specialties—each backed by experience on local homes like yours.
+          Tap a card to see how we scope the work, what we watch for on site, and how we protect
+          your home while construction is underway.
         </p>
-        <div class="grid">
-          <article class="tile">
-            <h3>Roofs</h3>
-            <p>Repairs, replacements, and storm-ready systems with ventilation and flashing done right.</p>
-            <RouterLink to="/services/roofs" class="tile-link">Learn more →</RouterLink>
-          </article>
-          <article class="tile">
-            <h3>Kitchen</h3>
-            <p>Layouts, cabinets, surfaces, and lighting that make the heart of your home work harder.</p>
-            <RouterLink to="/services/kitchen" class="tile-link">Learn more →</RouterLink>
-          </article>
-          <article class="tile">
-            <h3>Bathrooms</h3>
-            <p>Waterproofing, fixtures, tile, and storage—spa feel or practical family bath, your call.</p>
-            <RouterLink to="/services/bathrooms" class="tile-link">Learn more →</RouterLink>
-          </article>
+        <div class="showcase-grid">
+          <RouterLink
+            v-for="s in serviceShowcase"
+            :key="s.path"
+            :to="s.path"
+            class="showcase-card"
+          >
+            <div
+              class="showcase-bg"
+              :style="{ backgroundImage: `url('${s.image}')` }"
+              role="presentation"
+            />
+            <div class="showcase-overlay" aria-hidden="true" />
+            <div class="showcase-content">
+              <h3 class="showcase-title">{{ s.title }}</h3>
+              <p class="showcase-blurb">{{ s.blurb }}</p>
+              <span class="showcase-cta">See details</span>
+            </div>
+          </RouterLink>
         </div>
       </div>
     </section>
@@ -101,13 +146,14 @@ const portfolioImages: readonly PortfolioImage[] = [
     <section class="section cta">
       <div class="wrap cta-inner">
         <div>
-          <h2 class="h2 h2-light">Ready to talk through your project?</h2>
+          <p class="cta-kicker">Next step</p>
+          <h2 class="h2 h2-light">Tell us what you want fixed or reimagined.</h2>
           <p class="cta-text">
-            Tell us what you are hoping to change. We will follow up with questions, a site visit
-            if it helps, and a straightforward quote—no pressure.
+            We will ask smart questions, schedule a site visit when it helps, and send a
+            straightforward quote—no pressure and no mystery line items.
           </p>
         </div>
-        <RouterLink to="/contact" class="btn btn-accent">Contact us</RouterLink>
+        <RouterLink to="/contact" class="btn btn-accent">Start the conversation</RouterLink>
       </div>
     </section>
   </div>
@@ -118,53 +164,90 @@ const portfolioImages: readonly PortfolioImage[] = [
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin-top: 1.85rem;
+}
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.trust-strip li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.trust-strip li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.35);
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1.35rem;
-  min-height: 48px;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: 0.9rem 1.5rem;
+  min-height: 50px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
   font-size: 1rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   text-decoration: none;
   text-align: center;
   transition:
-    background 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
   background: var(--color-accent);
-  color: #1a1a1a;
+  color: #fff;
   border: 2px solid var(--color-accent);
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-primary:hover {
   background: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
-  color: #111;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.55);
 }
 
 .btn-ghost:hover {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .section {
-  padding: clamp(2.5rem, 6vw, 4rem) max(1rem, env(safe-area-inset-right)) clamp(2.5rem, 6vw, 4rem)
-    max(1rem, env(safe-area-inset-left));
+  padding: clamp(2.75rem, 6vw, 4.25rem) max(1rem, env(safe-area-inset-right))
+    clamp(2.75rem, 6vw, 4.25rem) max(1rem, env(safe-area-inset-left));
 }
 
 .wrap {
@@ -173,27 +256,45 @@ const portfolioImages: readonly PortfolioImage[] = [
   min-width: 0;
 }
 
+.kicker {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-accent-dark);
+  margin: 0 0 0.5rem;
+}
+
+.kicker.center {
+  text-align: center;
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 880px) {
   .split {
     grid-template-columns: 1fr;
   }
 }
 
 .h2 {
-  font-size: clamp(1.65rem, 3vw, 2rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-weight: 700;
   margin: 0 0 1rem;
+  line-height: 1.12;
+  color: var(--color-ink);
 }
 
 .h2-light {
   color: #fff;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
 }
 
 .center {
@@ -203,14 +304,15 @@ const portfolioImages: readonly PortfolioImage[] = [
 }
 
 .intro {
-  margin: 0 auto 2.5rem;
-  max-width: 52ch;
+  margin: 0 auto 2.25rem;
+  max-width: 48ch;
   color: var(--color-muted);
   font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .lead {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.7;
   color: var(--color-muted);
   margin: 0 0 1.25rem;
@@ -218,91 +320,159 @@ const portfolioImages: readonly PortfolioImage[] = [
 
 .checks {
   margin: 0;
-  padding-left: 1.15rem;
+  padding-left: 1.2rem;
   color: var(--color-ink);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-.card {
-  background: var(--color-surface);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(30, 58, 95, 0.06);
-}
-
-.card-stat {
-  align-self: center;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--color-deep);
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-}
-
-.stat {
+.story-photo {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--color-muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  position: relative;
 }
 
-.section-alt {
-  background: #ebe7de;
+.story-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
 }
 
-.grid {
+.photo-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.65rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: linear-gradient(to top, rgba(12, 10, 9, 0.85), transparent);
+}
+
+.callout {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding: 1.35rem 1.5rem 1.35rem 1.25rem;
+  border-left: 4px solid var(--color-accent);
+  background: linear-gradient(90deg, var(--color-accent-soft), transparent 65%);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.callout p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+}
+
+.section-showcase {
+  background: var(--color-bg-elevated);
+}
+
+.showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 @media (max-width: 900px) {
-  .grid {
+  .showcase-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.tile {
-  background: var(--color-surface);
+.showcase-card {
+  position: relative;
+  min-height: 300px;
   border-radius: var(--radius);
-  padding: 1.75rem;
-  border: 1px solid rgba(30, 58, 95, 0.08);
-  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.tile h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(28, 25, 23, 0.18);
 }
 
-.tile p {
+.showcase-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.45s ease;
+}
+
+.showcase-card:hover .showcase-bg {
+  transform: scale(1.06);
+}
+
+.showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 10, 9, 0.94) 0%,
+    rgba(28, 25, 23, 0.35) 48%,
+    rgba(28, 25, 23, 0.1) 100%
+  );
+}
+
+.showcase-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem 1.35rem 1.35rem;
+}
+
+.showcase-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-blurb {
   margin: 0 0 1rem;
-  flex: 1;
-  color: var(--color-muted);
-  line-height: 1.65;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 36ch;
 }
 
-.tile-link {
+.showcase-cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  color: var(--color-deep);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent-soft);
 }
 
-.tile-link:hover {
-  color: var(--color-accent-dark);
+.showcase-card:hover .showcase-cta {
+  color: #fff;
 }
 
 .cta {
-  background: linear-gradient(135deg, #1e3a5f, #243d52);
+  background: linear-gradient(125deg, #292524 0%, #1c1917 55%, #1b4332 100%);
   color: #fff;
 }
 
@@ -311,7 +481,40 @@ const portfolioImages: readonly PortfolioImage[] = [
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.75rem;
+}
+
+.cta-kicker {
+  font-family: var(--font-display);
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-soft);
+  font-weight: 600;
+}
+
+.cta-text {
+  margin: 0;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+  border: 2px solid var(--color-accent);
+  white-space: nowrap;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 640px) {
@@ -334,24 +537,5 @@ const portfolioImages: readonly PortfolioImage[] = [
     justify-content: center;
     white-space: normal;
   }
-}
-
-.cta-text {
-  margin: 0;
-  max-width: 52ch;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.65;
-}
-
-.btn-accent {
-  background: var(--color-accent);
-  color: #1a1a1a;
-  border: 2px solid var(--color-accent);
-  white-space: nowrap;
-}
-
-.btn-accent:hover {
-  background: #ddb82e;
-  border-color: #ddb82e;
 }
 </style>

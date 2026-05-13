@@ -23,6 +23,7 @@ const bullets = [
 <template>
   <div>
     <PageHero
+      bg-image="/images/portfolio/roof-aerial-architectural-shingles.png"
       eyebrow="Roofing"
       title="Roofs that shed weather and protect what is underneath."
       subtitle="Whether you are seeing granules in the gutter or planning ahead before selling, we inspect honestly, document what we find, and recommend repairs or replacement only when it makes sense."
@@ -68,8 +69,10 @@ const bullets = [
 }
 
 .prose h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 
 .prose p {
@@ -88,7 +91,11 @@ const bullets = [
 
 .cta {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
   margin-top: 0.5rem;
 }
 </style>

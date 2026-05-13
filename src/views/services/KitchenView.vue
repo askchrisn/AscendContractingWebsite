@@ -27,6 +27,7 @@ const bullets = [
 <template>
   <div>
     <PageHero
+      bg-image="/images/portfolio/portfolio-kitchen-shaker-island.png"
       eyebrow="Kitchen"
       title="Kitchens built around the way your household really moves."
       subtitle="From quick refreshes to full gut remodels, we align layout, storage, and finishes with how you cook, clean, and connect—then build with care so details line up when it all comes together."
@@ -73,8 +74,10 @@ const bullets = [
 }
 
 .prose h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 
 .prose p {
@@ -93,7 +96,11 @@ const bullets = [
 
 .cta {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
   margin-top: 0.5rem;
 }
 </style>

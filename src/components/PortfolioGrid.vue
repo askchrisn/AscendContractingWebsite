@@ -16,7 +16,12 @@ defineProps<{
     <div class="inner">
       <h2 v-if="heading" class="h2">{{ heading }}</h2>
       <ul class="grid">
-        <li v-for="(img, i) in images" :key="`${img.src}-${i}`" class="cell">
+        <li
+          v-for="(img, i) in images"
+          :key="`${img.src}-${i}`"
+          class="cell"
+          :class="{ 'cell--wide': i === 0 && (images.length === 1 || images.length >= 3) }"
+        >
           <figure class="fig">
             <img
               class="img"
@@ -37,10 +42,10 @@ defineProps<{
 
 <style scoped>
 .portfolio {
-  padding: clamp(2.25rem, 5vw, 3rem) max(1rem, env(safe-area-inset-right)) clamp(3rem, 7vw, 4rem)
+  padding: clamp(2.5rem, 6vw, 3.5rem) max(1rem, env(safe-area-inset-right)) clamp(3rem, 8vw, 4.5rem)
     max(1rem, env(safe-area-inset-left));
-  background: var(--color-bg);
-  border-top: 1px solid rgba(30, 58, 95, 0.08);
+  background: var(--color-surface);
+  border-top: 1px solid rgba(28, 25, 23, 0.08);
 }
 
 .inner {
@@ -50,9 +55,13 @@ defineProps<{
 }
 
 .h2 {
-  font-size: clamp(1.5rem, 3vw, 1.85rem);
-  margin: 0 0 1.25rem;
-  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  line-height: 1.15;
+  color: var(--color-ink);
 }
 
 .grid {
@@ -60,8 +69,14 @@ defineProps<{
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .cell--wide {
+    grid-column: span 2;
+  }
 }
 
 .cell {
@@ -74,8 +89,13 @@ defineProps<{
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(30, 58, 95, 0.08);
-  background: var(--color-surface);
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  background: var(--color-bg);
+  transition: transform 0.22s ease;
+}
+
+.fig:hover {
+  transform: translateY(-3px);
 }
 
 .img {
@@ -84,14 +104,22 @@ defineProps<{
   object-fit: cover;
 }
 
+.cell--wide .img {
+  aspect-ratio: 21 / 9;
+}
+
+@media (max-width: 899px) {
+  .cell--wide .img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 .footnote {
-  margin: 1.25rem 0 0;
-  font-size: 0.88rem;
+  margin: 1.35rem 0 0;
+  font-size: 0.9rem;
   line-height: 1.55;
   color: var(--color-muted);
-  text-align: center;
-  max-width: 62ch;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
+  max-width: 65ch;
 }
 </style>

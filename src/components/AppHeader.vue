@@ -55,7 +55,7 @@ onUnmounted(() => {
     />
     <div class="inner">
       <RouterLink to="/" class="brand" @click="closeMobile">
-        <span class="brand-mark" aria-hidden="true" />
+        <span class="brand-accent" aria-hidden="true" />
         <span class="brand-text">
           <span class="brand-name">Ascend</span>
           <span class="brand-sub">Contracting</span>
@@ -76,52 +76,54 @@ onUnmounted(() => {
       </button>
 
       <nav id="site-nav" class="nav" :class="{ 'nav--open': mobileOpen }">
-        <RouterLink to="/" class="nav-link" active-class="nav-link--active" @click="closeMobile">
-          Home
-        </RouterLink>
+        <div class="nav-links">
+          <RouterLink to="/" class="nav-link" active-class="nav-link--active" @click="closeMobile">
+            Home
+          </RouterLink>
 
-        <div class="nav-group" :class="{ 'nav-group--open': servicesOpen }">
-          <button
-            type="button"
-            class="nav-link nav-link--trigger"
-            :class="{ 'nav-link--active': route.path.startsWith('/services') }"
-            :aria-expanded="servicesOpen"
-            aria-haspopup="true"
-            @click="toggleServices"
-          >
-            Services
-            <svg class="chev" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-              <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
-            </svg>
-          </button>
-          <div class="subnav">
-            <RouterLink
-              to="/services"
-              class="subnav-link"
-              :class="{ 'subnav-link--active': route.path === '/services' }"
-              @click="closeMobile"
+          <div class="nav-group" :class="{ 'nav-group--open': servicesOpen }">
+            <button
+              type="button"
+              class="nav-link nav-link--trigger"
+              :class="{ 'nav-link--active': route.path.startsWith('/services') }"
+              :aria-expanded="servicesOpen"
+              aria-haspopup="true"
+              @click="toggleServices"
             >
-              All services
-            </RouterLink>
-            <RouterLink to="/services/roofs" class="subnav-link" @click="closeMobile">
-              Roofs
-            </RouterLink>
-            <RouterLink to="/services/kitchen" class="subnav-link" @click="closeMobile">
-              Kitchen
-            </RouterLink>
-            <RouterLink to="/services/bathrooms" class="subnav-link" @click="closeMobile">
-              Bathrooms
-            </RouterLink>
+              Services
+              <svg class="chev" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="subnav">
+              <RouterLink
+                to="/services"
+                class="subnav-link"
+                :class="{ 'subnav-link--active': route.path === '/services' }"
+                @click="closeMobile"
+              >
+                All services
+              </RouterLink>
+              <RouterLink to="/services/roofs" class="subnav-link" @click="closeMobile">
+                Roofs
+              </RouterLink>
+              <RouterLink to="/services/kitchen" class="subnav-link" @click="closeMobile">
+                Kitchen
+              </RouterLink>
+              <RouterLink to="/services/bathrooms" class="subnav-link" @click="closeMobile">
+                Bathrooms
+              </RouterLink>
+            </div>
           </div>
         </div>
 
         <RouterLink
           to="/contact"
-          class="nav-link nav-cta"
+          class="nav-cta"
           active-class="nav-cta--active"
           @click="closeMobile"
         >
-          Request a quote
+          Get a quote
         </RouterLink>
       </nav>
     </div>
@@ -148,9 +150,8 @@ onUnmounted(() => {
   right: 0;
   z-index: 100;
   padding-top: env(safe-area-inset-top, 0px);
-  background: rgba(246, 244, 239, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+  background: var(--color-surface);
+  border-bottom: 1px solid rgba(28, 25, 23, 0.08);
 }
 
 .inner {
@@ -161,7 +162,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .nav-backdrop {
@@ -171,50 +172,43 @@ onUnmounted(() => {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   text-decoration: none;
   color: inherit;
   min-width: 0;
+  flex-shrink: 0;
 }
 
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: linear-gradient(145deg, var(--color-deep), #152a45);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-}
-
-.brand-mark::before {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border: 2px solid var(--color-accent);
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  clip-path: polygon(0 100%, 50% 20%, 100% 100%);
+.brand-accent {
+  width: 4px;
+  height: 34px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.05;
+  min-width: 0;
 }
 
 .brand-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
+  font-size: 1.18rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-ink);
 }
 
 .brand-sub {
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   color: var(--color-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .menu-toggle {
@@ -223,58 +217,67 @@ onUnmounted(() => {
   justify-content: center;
   gap: 5px;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  border: none;
-  background: transparent;
+  border: 1px solid rgba(28, 25, 23, 0.12);
+  background: var(--color-surface);
   cursor: pointer;
   border-radius: 8px;
   -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle:hover {
-  background: rgba(30, 58, 95, 0.06);
+  border-color: rgba(28, 25, 23, 0.22);
+  background: var(--color-bg);
 }
 
 .bar {
   display: block;
   height: 2px;
-  width: 22px;
+  width: 18px;
   margin: 0 auto;
-  background: var(--color-deep);
+  background: var(--color-ink);
   border-radius: 1px;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 8px;
+  gap: 0.3rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--color-ink);
+  color: var(--color-muted);
   text-decoration: none;
   border: none;
   background: transparent;
   cursor: pointer;
   font-family: inherit;
+  transition: color 0.15s ease;
 }
 
 .nav-link:hover {
-  background: rgba(30, 58, 95, 0.06);
+  color: var(--color-ink);
+  background: transparent;
 }
 
 .nav-link--active {
-  color: var(--color-deep);
-  background: rgba(30, 58, 95, 0.08);
+  color: var(--color-ink);
+  font-weight: 600;
 }
 
 .nav-group {
@@ -285,20 +288,20 @@ onUnmounted(() => {
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.35rem;
-  min-width: 200px;
-  padding: 0.5rem;
+  margin-top: 0.4rem;
+  min-width: 208px;
+  padding: 0.4rem;
   background: var(--color-surface);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(30, 58, 95, 0.08);
+  border: 1px solid rgba(28, 25, 23, 0.1);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   transition:
-    opacity 0.15s ease,
-    transform 0.15s ease,
-    visibility 0.15s;
+    opacity 0.16s ease,
+    transform 0.16s ease,
+    visibility 0.16s;
 }
 
 .nav-group:hover .subnav,
@@ -310,6 +313,7 @@ onUnmounted(() => {
 }
 
 .chev {
+  opacity: 0.75;
   transition: transform 0.15s ease;
 }
 
@@ -319,36 +323,59 @@ onUnmounted(() => {
 
 .subnav-link {
   display: block;
-  padding: 0.55rem 0.75rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
   font-size: 0.9rem;
   color: var(--color-ink);
   text-decoration: none;
+  font-weight: 500;
 }
 
 .subnav-link:hover {
-  background: rgba(30, 58, 95, 0.06);
+  background: var(--color-bg);
 }
 
 .subnav-link.router-link-active,
 .subnav-link--active {
-  color: var(--color-deep);
+  color: var(--color-accent-dark);
   font-weight: 600;
-  background: rgba(201, 162, 39, 0.12);
+  background: var(--color-accent-soft);
 }
 
 .nav-cta {
-  margin-left: 0.35rem;
-  background: var(--color-deep);
-  color: #fff !important;
+  margin-left: 0.25rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .nav-cta:hover {
-  background: var(--color-deep-hover);
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
 }
 
 .nav-cta--active {
-  background: var(--color-deep-hover);
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .nav-links {
+    padding-right: 1rem;
+    margin-right: 0.25rem;
+    border-right: 1px solid rgba(28, 25, 23, 0.1);
+  }
 }
 
 @media (max-width: 899px) {
@@ -357,7 +384,7 @@ onUnmounted(() => {
     position: fixed;
     inset: 0;
     z-index: 98;
-    background: rgba(26, 35, 50, 0.45);
+    background: rgba(12, 10, 9, 0.35);
     border: none;
     padding: 0;
     cursor: pointer;
@@ -378,10 +405,11 @@ onUnmounted(() => {
     max-height: calc(100vh - var(--header-h) - env(safe-area-inset-top, 0px));
     flex-direction: column;
     align-items: stretch;
-    padding: 0.75rem max(1rem, env(safe-area-inset-left)) max(1.5rem, env(safe-area-inset-bottom))
+    gap: 0;
+    padding: 0.5rem max(1rem, env(safe-area-inset-left)) max(1.25rem, env(safe-area-inset-bottom))
       max(1rem, env(safe-area-inset-right));
-    background: var(--color-bg);
-    border-top: 1px solid rgba(30, 58, 95, 0.08);
+    background: var(--color-surface);
+    border-top: 1px solid rgba(28, 25, 23, 0.08);
     transform: translateX(100%);
     transition: transform 0.22s ease;
     overflow-y: auto;
@@ -393,11 +421,21 @@ onUnmounted(() => {
     transform: translateX(0);
   }
 
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
   .nav-link {
     min-height: 48px;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0.5rem;
     font-size: 1.05rem;
     justify-content: flex-start;
+    color: var(--color-ink);
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -407,11 +445,11 @@ onUnmounted(() => {
   }
 
   .nav-cta {
-    margin-left: 0;
-    margin-top: 0.5rem;
+    margin: 1rem 0 0;
     justify-content: center;
-    min-height: 52px;
-    font-size: 1rem;
+    min-height: 50px;
+    text-align: center;
+    border-radius: 10px;
   }
 
   .subnav {
@@ -421,10 +459,10 @@ onUnmounted(() => {
     transform: none;
     box-shadow: none;
     border: none;
-    background: rgba(30, 58, 95, 0.04);
-    margin: 0.25rem 0 0.5rem;
+    background: var(--color-bg);
+    margin: 0.15rem 0 0.35rem;
     display: none;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 0.35rem;
   }
 
@@ -441,11 +479,11 @@ onUnmounted(() => {
   }
 
   .subnav-link {
-    min-height: 48px;
+    min-height: 46px;
     display: flex;
     align-items: center;
-    padding: 0.65rem 1rem;
-    font-size: 1rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.98rem;
     -webkit-tap-highlight-color: transparent;
   }
 }
