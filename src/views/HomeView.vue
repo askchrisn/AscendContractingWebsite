@@ -51,9 +51,10 @@ const serviceShowcase = [
 
 <template>
   <div>
+    <!-- Hero photo: Dover, MA project (DoverMA.webp) -->
     <PageHero
       size="tall"
-      bg-image="/images/portfolio/hero-general-contracting.png"
+      bg-image="/images/portfolio/DoverMA.webp"
       eyebrow="General contractor · MA & NH · Licensed & insured"
       title="Kitchens, baths, and whole-home remodels."
       subtitle="Proudly serving Massachusetts and New Hampshire."
