@@ -55,15 +55,15 @@ const serviceShowcase = [
       size="tall"
       bg-image="/images/portfolio/hero-general-contracting.png"
       eyebrow="General contractor · MA & NH · Licensed & insured"
-      title="General contracting and remodels built to earn your next referral."
-      subtitle="We show up on time, keep dust under control, and put the messy details on paper before we swing a hammer—so you always know what you are getting. Proudly serving Massachusetts and New Hampshire."
+      title="Kitchens, baths, and whole-home remodels."
+      subtitle="Proudly serving Massachusetts and New Hampshire."
     >
       <div class="hero-actions">
         <RouterLink to="/contact" class="btn btn-primary">Get a free quote</RouterLink>
         <RouterLink to="/services" class="btn btn-ghost">Browse services</RouterLink>
       </div>
       <ul class="trust-strip" aria-label="Highlights">
-        <li>Written scopes</li>
+        <li>Competitive pricing</li>
         <li>Realistic schedules</li>
         <li>Clean jobsites</li>
       </ul>
