@@ -25,9 +25,8 @@ import { RouterLink } from 'vue-router'
       </div>
       <div class="col">
         <p class="heading">Get in touch</p>
-        <a href="tel:+15551234567">(555) 123-4567</a>
-        <a href="mailto:hello@ascendcontracting.example">hello@ascendcontracting.example</a>
-        <p class="hours">Mon–Sat · 7am–6pm</p>
+        <a href="tel:+19784216278">+1 (978) 421-6278</a>
+        <a href="mailto:DannyAscendContracting@gmail.com">DannyAscendContracting@gmail.com</a>
       </div>
     </div>
     <div class="bar">
@@ -112,12 +111,6 @@ import { RouterLink } from 'vue-router'
 .col a:hover {
   color: #fff;
   text-decoration: underline;
-}
-
-.hours {
-  margin: 0.35rem 0 0;
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
 }
 
 .bar {

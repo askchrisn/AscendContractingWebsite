@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue'
 import PageHero from '@/components/PageHero.vue'
 
-const email = 'hello@ascendcontracting.example'
+const email = 'DannyAscendContracting@gmail.com'
 
 const form = reactive({
   name: '',
@@ -46,7 +46,7 @@ function onSubmit() {
     <PageHero
       eyebrow="Contact"
       title="Request a quote or ask a question."
-      subtitle="Share a few details and we will get back to you. Prefer the phone? Call us during business hours—we are glad to talk through timing and next steps."
+      subtitle="Share a few details and we will get back to you. Prefer the phone? Call us during business hours. We are glad to talk through timing and next steps."
     />
 
     <section class="section">
@@ -55,21 +55,16 @@ function onSubmit() {
           <aside class="aside">
             <h2 class="h2">Direct lines</h2>
             <p class="muted">
-              Replace the placeholder phone and email in the footer and form with your real
-              business details before going live.
+              Reach us by phone during business hours, or send a note through the form.
             </p>
             <ul class="contact-list">
               <li>
                 <span class="label">Phone</span>
-                <a href="tel:+15551234567">(555) 123-4567</a>
+                <a href="tel:+19784216278">+1 (978) 421-6278</a>
               </li>
               <li>
                 <span class="label">Email</span>
                 <a :href="`mailto:${email}`">{{ email }}</a>
-              </li>
-              <li>
-                <span class="label">Hours</span>
-                Monday–Saturday, 7am–6pm
               </li>
             </ul>
           </aside>
@@ -127,7 +122,7 @@ function onSubmit() {
                 />
               </label>
               <p v-if="error" class="error">{{ error }}</p>
-              <button type="submit" class="submit">Open email with quote request</button>
+              <button type="submit" class="submit">Send message</button>
             </form>
           </div>
         </div>

@@ -13,9 +13,9 @@ const roofPhotos: readonly PortfolioImage[] = [
 
 const bullets = [
   'Full roof replacements and targeted repairs',
-  'Asphalt architectural shingles, metal, and low-slope options discussed in plain language',
+  'Asphalt architectural shingles, metal, and low slope options',
   'Decking inspection, underlayment, ice & water shield, and ridge ventilation',
-  'Flashing details at chimneys, walls, and penetrations—where leaks like to start',
+  'Flashing details at chimneys, walls, and penetrations where leaks like to start',
   'Cleanup and magnet sweep; we treat your yard like our own',
 ] as const
 </script>

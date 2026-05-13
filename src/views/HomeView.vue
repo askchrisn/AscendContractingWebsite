@@ -60,7 +60,7 @@ const serviceShowcase = [
       subtitle="Proudly serving Massachusetts and New Hampshire."
     >
       <div class="hero-actions">
-        <RouterLink to="/contact" class="btn btn-primary">Get a free quote</RouterLink>
+        <RouterLink to="/contact" class="btn btn-primary">Contact us</RouterLink>
         <RouterLink :to="{ path: '/', hash: '#our-services' }" class="btn btn-ghost">
           Browse services
         </RouterLink>

@@ -115,7 +115,7 @@ onUnmounted(() => {
           active-class="nav-cta--active"
           @click="closeMobile"
         >
-          Get a quote
+          Contact us
         </RouterLink>
       </nav>
     </div>
@@ -336,24 +336,36 @@ onUnmounted(() => {
 
 .nav-cta {
   margin-left: 0.25rem;
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.95rem;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   text-decoration: none;
   color: #fff;
   background: var(--color-accent);
-  border: 1px solid var(--color-accent);
+  border: 2px solid var(--color-accent);
   white-space: nowrap;
+  box-shadow: var(--shadow-glow);
   transition:
-    background 0.15s ease,
-    border-color 0.15s ease;
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-cta:hover {
   background: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 .nav-cta--active {
@@ -438,10 +450,13 @@ onUnmounted(() => {
 
   .nav-cta {
     margin: 1rem 0 0;
+    display: flex;
     justify-content: center;
     min-height: 50px;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.88rem;
     text-align: center;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   .subnav {
