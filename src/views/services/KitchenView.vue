@@ -1,0 +1,80 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+import PageHero from '@/components/PageHero.vue'
+
+const bullets = [
+  'Cabinet refacing or new layouts with improved work triangles',
+  'Countertops, backsplashes, and durable flooring suited to traffic',
+  'Lighting layers: task, ambient, and accent for work and mood',
+  'Appliance fit-up, venting, and subtle electrical/plumbing coordination',
+  'Dust control and phased work when you are living through the remodel',
+] as const
+</script>
+
+<template>
+  <div>
+    <PageHero
+      eyebrow="Kitchen"
+      title="Kitchens built around the way your household really moves."
+      subtitle="From quick refreshes to full gut remodels, we align layout, storage, and finishes with how you cook, clean, and connect—then build with care so details line up when it all comes together."
+    />
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>Kitchen remodels with a plan</h2>
+        <p>
+          We start with listening: who uses the space, where bottlenecks happen, and what you
+          want to feel when the day winds down at the island. Then we translate that into a clear
+          scope so surprises are minimized and decisions stay manageable.
+        </p>
+        <ul>
+          <li v-for="b in bullets" :key="b">{{ b }}</li>
+        </ul>
+        <p>
+          Have a designer or architect already? We are happy to collaborate. Need suggestions on
+          materials that balance cost and longevity? We will share what we have seen hold up in
+          local homes.
+        </p>
+        <RouterLink to="/contact" class="cta">Tell us about your kitchen →</RouterLink>
+      </div>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+.section {
+  padding: clamp(2.25rem, 5vw, 3rem) max(1rem, env(safe-area-inset-right)) clamp(3rem, 7vw, 4.5rem)
+    max(1rem, env(safe-area-inset-left));
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.prose h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.prose ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+  color: var(--color-ink);
+  line-height: 1.8;
+}
+
+.cta {
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+</style>
