@@ -8,7 +8,8 @@ import { RouterLink } from 'vue-router'
       <div class="col brand">
         <p class="logo">Ascend Contracting</p>
         <p class="tag">
-          Local craftsmanship. Honest timelines. Work you can stand on—and live in.
+          Licensed general contractor. Clear scopes, respectful crews, and workmanship that holds
+          up to real life in your home.
         </p>
       </div>
       <div class="col">

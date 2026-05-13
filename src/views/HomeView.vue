@@ -6,10 +6,6 @@ import type { PortfolioImage } from '@/components/PortfolioGrid.vue'
 
 const portfolioImages: readonly PortfolioImage[] = [
   {
-    src: '/images/portfolio/roof-aerial-architectural-shingles.png',
-    alt: 'Aerial view of a home with new dark gray architectural asphalt shingles, brick chimneys, and neat installation.',
-  },
-  {
     src: '/images/portfolio/portfolio-kitchen-shaker-island.png',
     alt: 'Bright kitchen with white shaker cabinets, dark quartz countertops, subway tile backsplash, and a central island.',
   },
@@ -25,13 +21,17 @@ const portfolioImages: readonly PortfolioImage[] = [
     src: '/images/portfolio/portfolio-bath-walk-in-modern.png',
     alt: 'Modern bathroom with walk-in shower, floating vanity, and contrasting tile details.',
   },
+  {
+    src: '/images/portfolio/roof-aerial-architectural-shingles.png',
+    alt: 'Aerial view of a home with new dark gray architectural asphalt shingles, brick chimneys, and neat installation.',
+  },
 ] as const
 
 const serviceShowcase = [
   {
     title: 'Roofs',
     path: '/services/roofs',
-    blurb: 'Storm-ready installs, honest inspections, and clean job sites when we are on your roof.',
+    blurb: 'Storm-ready installs and honest inspections—coordinated with the rest of your project so the site stays organized.',
     image: '/images/portfolio/roof-aerial-architectural-shingles.png',
   },
   {
@@ -53,10 +53,10 @@ const serviceShowcase = [
   <div>
     <PageHero
       size="tall"
-      bg-image="/images/portfolio/roof-aerial-architectural-shingles.png"
-      eyebrow="Local crew · Licensed & insured"
-      title="Roofing and remodels built to earn your next referral."
-      subtitle="We show up on time, keep dust under control, and put the messy details on paper before we swing a hammer—so you always know what you are getting."
+      bg-image="/images/portfolio/hero-general-contracting.png"
+      eyebrow="General contractor · MA & NH · Licensed & insured"
+      title="General contracting and remodels built to earn your next referral."
+      subtitle="We show up on time, keep dust under control, and put the messy details on paper before we swing a hammer—so you always know what you are getting. Proudly serving Massachusetts and New Hampshire."
     >
       <div class="hero-actions">
         <RouterLink to="/contact" class="btn btn-primary">Get a free quote</RouterLink>
@@ -65,7 +65,7 @@ const serviceShowcase = [
       <ul class="trust-strip" aria-label="Highlights">
         <li>Written scopes</li>
         <li>Realistic schedules</li>
-        <li>Magnet sweep on roofs</li>
+        <li>Clean jobsites</li>
       </ul>
     </PageHero>
 
@@ -75,9 +75,10 @@ const serviceShowcase = [
           <p class="kicker">Who we are</p>
           <h2 class="h2">Contractors who still answer the phone.</h2>
           <p class="lead">
-            We are a neighborhood-focused crew. Whether you need a roof that sheds weather or a
-            kitchen that fits how your family lives, we plan carefully, communicate often, and
-            leave your property ready for you to enjoy—not a punch list nightmare.
+            We are a neighborhood-focused general contractor. Whether you are opening up a floor
+            plan, refreshing baths and kitchens, or coordinating exterior and interior work, we
+            plan carefully, communicate often, and leave your property ready to enjoy—not a
+            punch list nightmare.
           </p>
           <ul class="checks">
             <li>One point of contact from walkthrough to punch list</li>
@@ -94,7 +95,7 @@ const serviceShowcase = [
             width="900"
             height="1120"
           />
-          <figcaption class="photo-cap">Kitchen & bath remodels</figcaption>
+          <figcaption class="photo-cap">Residential remodels</figcaption>
         </figure>
       </div>
 
@@ -107,15 +108,15 @@ const serviceShowcase = [
     </section>
 
     <PortfolioGrid
-      heading="Proof on the roof—and in the rooms below it"
+      heading="Work that backs up our word"
       :images="portfolioImages"
-      footnote="The aerial roof photo is from a recent replacement. Interior images are representative of finishes and layouts we often build—ask us for photos from jobs near you."
+      footnote="Mix of recent local project photography and representative finish examples—ask us for references and photos from jobs near you."
     />
 
     <section class="section section-showcase">
       <div class="wrap">
         <p class="kicker center">What we hang our hat on</p>
-        <h2 class="h2 center">Three trades. One standard for workmanship.</h2>
+        <h2 class="h2 center">Core trades. One general contractor standard.</h2>
         <p class="intro center">
           Tap a card to see how we scope the work, what we watch for on site, and how we protect
           your home while construction is underway.
