@@ -96,14 +96,6 @@ onUnmounted(() => {
               </svg>
             </button>
             <div class="subnav">
-              <RouterLink
-                to="/services"
-                class="subnav-link"
-                :class="{ 'subnav-link--active': route.path === '/services' }"
-                @click="closeMobile"
-              >
-                All services
-              </RouterLink>
               <RouterLink to="/services/roofs" class="subnav-link" @click="closeMobile">
                 Roofs
               </RouterLink>

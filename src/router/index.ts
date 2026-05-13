@@ -12,9 +12,7 @@ const router = createRouter({
     },
     {
       path: '/services',
-      name: 'services',
-      component: () => import('@/views/ServicesView.vue'),
-      meta: { title: 'Services' },
+      redirect: { path: '/', hash: '#our-services' },
     },
     {
       path: '/services/roofs',
@@ -41,7 +39,11 @@ const router = createRouter({
       meta: { title: 'Contact Us' },
     },
   ],
-  scrollBehavior() {
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) {
+      return { el: to.hash, top: 80, behavior: 'smooth' }
+    }
     return { top: 0 }
   },
 })

@@ -60,7 +60,9 @@ const serviceShowcase = [
     >
       <div class="hero-actions">
         <RouterLink to="/contact" class="btn btn-primary">Get a free quote</RouterLink>
-        <RouterLink to="/services" class="btn btn-ghost">Browse services</RouterLink>
+        <RouterLink :to="{ path: '/', hash: '#our-services' }" class="btn btn-ghost">
+          Browse services
+        </RouterLink>
       </div>
       <ul class="trust-strip" aria-label="Highlights">
         <li>Competitive pricing</li>
@@ -113,7 +115,7 @@ const serviceShowcase = [
       footnote="Mix of recent local project photography and representative finish examples—ask us for references and photos from jobs near you."
     />
 
-    <section class="section section-showcase">
+    <section id="our-services" class="section section-showcase">
       <div class="wrap">
         <p class="kicker center">What we hang our hat on</p>
         <h2 class="h2 center">Core trades. One general contractor standard.</h2>
@@ -150,8 +152,7 @@ const serviceShowcase = [
           <p class="cta-kicker">Next step</p>
           <h2 class="h2 h2-light">Tell us what you want fixed or reimagined.</h2>
           <p class="cta-text">
-            We will ask smart questions, schedule a site visit when it helps, and send a
-            straightforward quote—no pressure and no mystery line items.
+            Tell us what you want changed. We look at the job in person, then we talk through the price and the timeline.
           </p>
         </div>
         <RouterLink to="/contact" class="btn btn-accent">Start the conversation</RouterLink>

@@ -15,7 +15,6 @@ import { RouterLink } from 'vue-router'
       <div class="col">
         <p class="heading">Explore</p>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/services">Services</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
       </div>
       <div class="col">

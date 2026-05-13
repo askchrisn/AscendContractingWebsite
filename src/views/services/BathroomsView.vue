@@ -16,8 +16,8 @@ const bathPhotos: readonly PortfolioImage[] = [
 ] as const
 
 const bullets = [
-  'Waterproofing systems behind tile and at curbs—non-negotiable for us',
-  'Walk-in showers, tub-shower combos, and accessibility-minded layouts',
+  'Waterproofing systems behind tile are a non-negotiable for us',
+  'Walk-in showers, tub-shower combos, and accessibility minded layouts',
   'Ventilation upgrades to move moisture out efficiently',
   'Fixtures and finishes chosen for cleaning ease and daily comfort',
   'Coordinated tile layouts and niches that feel intentional, not cramped',
@@ -30,7 +30,7 @@ const bullets = [
       bg-image="/images/portfolio/portfolio-bath-primary-spa.png"
       eyebrow="Bathrooms"
       title="Bathrooms that feel good today and stay solid tomorrow."
-      subtitle="Moisture management, thoughtful layout, and finishes you will not fight with every Saturday—we build baths that work for busy mornings and slow evenings alike."
+      subtitle="Moisture management, thoughtful layout, and finishes you will love. We build baths that work for busy mornings and slow evenings alike."
     />
 
     <PortfolioGrid

@@ -40,7 +40,7 @@ const bullets = [
         <h2>How we approach roofing</h2>
         <p>
           Every roof tells a story from the attic out. We check ventilation, moisture patterns,
-          and structural soundness—not only the top layer. That way your investment addresses the
+          and structural soundness. That way your investment addresses the
           whole system, not just the visible shingles.
         </p>
         <ul>

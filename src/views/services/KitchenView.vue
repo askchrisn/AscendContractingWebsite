@@ -30,7 +30,7 @@ const bullets = [
       bg-image="/images/portfolio/portfolio-kitchen-shaker-island.png"
       eyebrow="Kitchen"
       title="Kitchens built around the way your household really moves."
-      subtitle="From quick refreshes to full gut remodels, we align layout, storage, and finishes with how you cook, clean, and connect—then build with care so details line up when it all comes together."
+      subtitle="From quick refreshes to full gut remodels, we align layout, storage, and finishes with how you cook, clean, and connect. We build with care so details line up when it all comes together."
     />
 
     <PortfolioGrid
