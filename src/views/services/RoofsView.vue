@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import PageHero from '@/components/PageHero.vue'
+import PortfolioGrid from '@/components/PortfolioGrid.vue'
+import type { PortfolioImage } from '@/components/PortfolioGrid.vue'
+
+const roofPhotos: readonly PortfolioImage[] = [
+  {
+    src: '/images/portfolio/roof-aerial-architectural-shingles.png',
+    alt: 'Aerial view of a home showing new architectural asphalt shingles, ridge lines, and chimney flashing details.',
+  },
+] as const
 
 const bullets = [
   'Full roof replacements and targeted repairs',
@@ -17,6 +26,12 @@ const bullets = [
       eyebrow="Roofing"
       title="Roofs that shed weather and protect what is underneath."
       subtitle="Whether you are seeing granules in the gutter or planning ahead before selling, we inspect honestly, document what we find, and recommend repairs or replacement only when it makes sense."
+    />
+
+    <PortfolioGrid
+      heading="Roofing in the field"
+      :images="roofPhotos"
+      footnote="Drone photo from a completed shingle installation—cleanup and magnet sweep included on every full replacement."
     />
 
     <section class="section">

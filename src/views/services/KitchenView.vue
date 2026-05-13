@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import PageHero from '@/components/PageHero.vue'
+import PortfolioGrid from '@/components/PortfolioGrid.vue'
+import type { PortfolioImage } from '@/components/PortfolioGrid.vue'
+
+const kitchenPhotos: readonly PortfolioImage[] = [
+  {
+    src: '/images/portfolio/portfolio-kitchen-shaker-island.png',
+    alt: 'Kitchen with white shaker cabinets, island seating, pendant lighting, and quartz countertops.',
+  },
+  {
+    src: '/images/portfolio/portfolio-kitchen-bright-glass.png',
+    alt: 'Kitchen with glass-front uppers, marble-look counters, and layered lighting.',
+  },
+] as const
 
 const bullets = [
   'Cabinet refacing or new layouts with improved work triangles',
@@ -17,6 +30,12 @@ const bullets = [
       eyebrow="Kitchen"
       title="Kitchens built around the way your household really moves."
       subtitle="From quick refreshes to full gut remodels, we align layout, storage, and finishes with how you cook, clean, and connect—then build with care so details line up when it all comes together."
+    />
+
+    <PortfolioGrid
+      heading="Kitchen inspiration"
+      :images="kitchenPhotos"
+      footnote="Representative photography of finishes and layouts we commonly install—your selections and layout will be tailored to your home."
     />
 
     <section class="section">

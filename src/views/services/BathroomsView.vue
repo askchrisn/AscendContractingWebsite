@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import PageHero from '@/components/PageHero.vue'
+import PortfolioGrid from '@/components/PortfolioGrid.vue'
+import type { PortfolioImage } from '@/components/PortfolioGrid.vue'
+
+const bathPhotos: readonly PortfolioImage[] = [
+  {
+    src: '/images/portfolio/portfolio-bath-primary-spa.png',
+    alt: 'Spa-like bathroom with walk-in shower, freestanding tub, and double vanity.',
+  },
+  {
+    src: '/images/portfolio/portfolio-bath-walk-in-modern.png',
+    alt: 'Modern bathroom with walk-in shower, floating vanity, and crisp tile details.',
+  },
+] as const
 
 const bullets = [
   'Waterproofing systems behind tile and at curbs—non-negotiable for us',
@@ -17,6 +30,12 @@ const bullets = [
       eyebrow="Bathrooms"
       title="Bathrooms that feel good today and stay solid tomorrow."
       subtitle="Moisture management, thoughtful layout, and finishes you will not fight with every Saturday—we build baths that work for busy mornings and slow evenings alike."
+    />
+
+    <PortfolioGrid
+      heading="Bathroom inspiration"
+      :images="bathPhotos"
+      footnote="Representative photography of styles we build toward—waterproofing, ventilation, and layout are always matched to your space."
     />
 
     <section class="section">

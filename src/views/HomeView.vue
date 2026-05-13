@@ -1,6 +1,31 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import PageHero from '@/components/PageHero.vue'
+import PortfolioGrid from '@/components/PortfolioGrid.vue'
+import type { PortfolioImage } from '@/components/PortfolioGrid.vue'
+
+const portfolioImages: readonly PortfolioImage[] = [
+  {
+    src: '/images/portfolio/roof-aerial-architectural-shingles.png',
+    alt: 'Aerial view of a home with new dark gray architectural asphalt shingles, brick chimneys, and neat installation.',
+  },
+  {
+    src: '/images/portfolio/portfolio-kitchen-shaker-island.png',
+    alt: 'Bright kitchen with white shaker cabinets, dark quartz countertops, subway tile backsplash, and a central island.',
+  },
+  {
+    src: '/images/portfolio/portfolio-kitchen-bright-glass.png',
+    alt: 'Airy kitchen with white cabinets, glass uppers, marble-look counters, and black accent hardware.',
+  },
+  {
+    src: '/images/portfolio/portfolio-bath-primary-spa.png',
+    alt: 'Primary bathroom with walk-in glass shower, freestanding tub, and double vanity.',
+  },
+  {
+    src: '/images/portfolio/portfolio-bath-walk-in-modern.png',
+    alt: 'Modern bathroom with walk-in shower, floating vanity, and contrasting tile details.',
+  },
+] as const
 </script>
 
 <template>
@@ -40,6 +65,12 @@ import PageHero from '@/components/PageHero.vue'
         </div>
       </div>
     </section>
+
+    <PortfolioGrid
+      heading="Work we are proud to stand behind"
+      :images="portfolioImages"
+      footnote="The aerial roof photo is from a recent replacement. Interior images are representative of finishes and layouts we often build—ask us for photos from jobs near you."
+    />
 
     <section class="section section-alt">
       <div class="wrap">
