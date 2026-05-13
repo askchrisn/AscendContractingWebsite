@@ -31,6 +31,7 @@ import { RouterLink } from 'vue-router'
     </div>
     <div class="bar">
       <p>© {{ new Date().getFullYear() }} Ascend Contracting. Licensed & insured.</p>
+      <p class="credit">Website created by AskChris LLC</p>
     </div>
   </footer>
 </template>
@@ -124,5 +125,11 @@ import { RouterLink } from 'vue-router'
   margin: 0;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.credit {
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
 }
 </style>

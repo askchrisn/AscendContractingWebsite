@@ -9,6 +9,14 @@ const roofPhotos: readonly PortfolioImage[] = [
     src: '/images/portfolio/roof-aerial-architectural-shingles.png',
     alt: 'Aerial view of a home showing new architectural asphalt shingles, ridge lines, and chimney flashing details.',
   },
+  {
+    src: '/images/portfolio/portfolio-roof-shingles-ridge.png',
+    alt: 'New charcoal architectural shingles with ridge cap and ridge vent on a residential roof.',
+  },
+  {
+    src: '/images/portfolio/portfolio-roof-valley-flashing.png',
+    alt: 'Roof valley detail showing shingles, underlayment, and step flashing at a wall intersection.',
+  },
 ] as const
 
 const bullets = [
@@ -32,7 +40,7 @@ const bullets = [
     <PortfolioGrid
       heading="Roofing in the field"
       :images="roofPhotos"
-      footnote="Drone photo from a completed shingle installation—cleanup and magnet sweep included on every full replacement."
+      footnote="Aerial photo from a completed install; additional images illustrate typical shingle, ridge, and flashing details we build to—ask for photos from recent jobs near you."
     />
 
     <section class="section">
