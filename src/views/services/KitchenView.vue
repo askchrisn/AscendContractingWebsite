@@ -19,7 +19,7 @@ const bullets = [
   'Cabinet refacing or new layouts with improved work triangles',
   'Countertops, backsplashes, and durable flooring suited to traffic',
   'Lighting layers: task, ambient, and accent for work and mood',
-  'Appliance fit-up, venting, and subtle electrical/plumbing coordination',
+  'Appliance fit up, venting, and subtle electrical and plumbing coordination',
   'Dust control and phased work when you are living through the remodel',
 ] as const
 </script>
@@ -36,7 +36,7 @@ const bullets = [
     <PortfolioGrid
       heading="Kitchen inspiration"
       :images="kitchenPhotos"
-      footnote="Representative photography of finishes and layouts we commonly install—your selections and layout will be tailored to your home."
+      footnote="Representative photography of finishes and layouts we commonly install. Your selections and layout will be tailored to your home."
     />
 
     <section class="section">

@@ -31,7 +31,8 @@ const serviceShowcase = [
   {
     title: 'Roofs',
     path: '/services/roofs',
-    blurb: 'Storm-ready installs and honest inspections—coordinated with the rest of your project so the site stays organized.',
+    blurb:
+      'Honest inspections, installs that take weather seriously, and crews who line up with the rest of your project so the property stays picked up.',
     image: '/images/portfolio/roof-aerial-architectural-shingles.png',
   },
   {
@@ -56,7 +57,7 @@ const serviceShowcase = [
       size="tall"
       bg-image="/images/portfolio/DoverMA.webp"
       eyebrow="General contractor · MA & NH · Licensed & insured"
-      title="Kitchens, baths, and whole-home remodels."
+      title="Kitchens, baths, and whole home remodels."
       subtitle="Proudly serving Massachusetts and New Hampshire."
     >
       <div class="hero-actions">
@@ -78,9 +79,9 @@ const serviceShowcase = [
           <p class="kicker">Who we are</p>
           <h2 class="h2">Contractors who still answer the phone.</h2>
           <p class="lead">
-            We are a neighborhood-focused general contractor. Whether you are opening up a floor
+            We are a neighborhood focused general contractor. Whether you are opening up a floor
             plan, refreshing baths and kitchens, or coordinating exterior and interior work, we
-            plan carefully, communicate often, and leave your property ready to enjoy—not a
+            plan carefully, communicate often, and leave your property ready to enjoy. Not a
             punch list nightmare.
           </p>
           <ul class="checks">
@@ -113,7 +114,7 @@ const serviceShowcase = [
     <PortfolioGrid
       heading="Work that backs up our word"
       :images="portfolioImages"
-      footnote="Mix of recent local project photography and representative finish examples—ask us for references and photos from jobs near you."
+      footnote="Mix of recent local project photography and representative finish examples. Ask us for references and photos from jobs near you."
     />
 
     <section id="our-services" class="section section-showcase">

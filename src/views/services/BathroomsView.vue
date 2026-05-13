@@ -16,8 +16,8 @@ const bathPhotos: readonly PortfolioImage[] = [
 ] as const
 
 const bullets = [
-  'Waterproofing systems behind tile are a non-negotiable for us',
-  'Walk-in showers, tub-shower combos, and accessibility minded layouts',
+  'Waterproofing behind tile is a must for us',
+  'Walk in showers, tub and shower combos, and layouts planned with accessibility in mind',
   'Ventilation upgrades to move moisture out efficiently',
   'Fixtures and finishes chosen for cleaning ease and daily comfort',
   'Coordinated tile layouts and niches that feel intentional, not cramped',
@@ -36,7 +36,7 @@ const bullets = [
     <PortfolioGrid
       heading="Bathroom inspiration"
       :images="bathPhotos"
-      footnote="Representative photography of styles we build toward—waterproofing, ventilation, and layout are always matched to your space."
+      footnote="Representative photography of styles we build toward. Waterproofing, ventilation, and layout are always matched to your space."
     />
 
     <section class="section">
@@ -50,7 +50,7 @@ const bullets = [
           <li v-for="b in bullets" :key="b">{{ b }}</li>
         </ul>
         <p>
-          Powder room glow-up or primary suite retreat—we scale the scope to your goals and
+          Powder room glow-up or primary suite retreat. We scale the scope to your goals and
           budget, and we flag trade-offs early so you can choose with confidence.
         </p>
         <RouterLink to="/contact" class="cta">Plan your bathroom project →</RouterLink>

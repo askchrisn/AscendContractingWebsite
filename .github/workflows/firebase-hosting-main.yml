@@ -1,7 +1,7 @@
 # Deploy production Hosting when `main` updates.
 # One-time: GitHub → repo Settings → Secrets and variables → Actions → New repository secret
 #   Name (Firebase CLI default): FIREBASE_SERVICE_ACCOUNT_ASCENDCONTRACTING_F14EC
-#   OR shorter name: FIREBASE_SERVICE_ACCOUNT — then set firebaseServiceAccount below to match.
+#   OR shorter name: FIREBASE_SERVICE_ACCOUNT, then set firebaseServiceAccount below to match.
 #   Value: full JSON from Firebase Console → Project settings → Service accounts →
 #          Generate new private key.
 

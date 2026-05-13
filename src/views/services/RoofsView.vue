@@ -40,7 +40,7 @@ const bullets = [
     <PortfolioGrid
       heading="Roofing in the field"
       :images="roofPhotos"
-      footnote="Aerial photo from a completed install; additional images illustrate typical shingle, ridge, and flashing details we build to—ask for photos from recent jobs near you."
+      footnote="Aerial photo from a completed install; additional images illustrate typical shingle, ridge, and flashing details we build to. Ask for photos from recent jobs near you."
     />
 
     <section class="section">

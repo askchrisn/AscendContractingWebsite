@@ -1,11 +1,11 @@
 :root {
-  /* Warm paper / job-site neutral — not cool gray or bank blue */
+  /* Warm paper / job-site neutral; not cool gray or bank blue */
   --color-bg: #f3efe6;
   --color-bg-elevated: #e8e0d2;
   --color-surface: #fffdf8;
   --color-ink: #1c1917;
   --color-muted: #57534e;
-  /* Signal / CTA — forest, reads trades & trustworthy (not safety orange) */
+  /* Signal / CTA: forest, reads trades and trustworthy (not safety orange) */
   --color-accent: #2d6a4f;
   --color-accent-soft: #d8f3dc;
   --color-accent-dark: #1b4332;
